@@ -1,0 +1,18 @@
+name: smoke_test
+
+on:
+  push:
+
+jobs:
+  smoke_test_ubuntu:
+    uses: bilpay-tech/air/.github/workflows/smoke_test_reuse_job.yml@add_smoke_test
+    with: 
+      run_on: ubuntu-latest
+  smoke_test_macos:
+    uses: bilpay-tech/air/.github/workflows/smoke_test_reuse_job.yml@add_smoke_test
+    with: 
+      run_on: macos-latest
+  smoke_test_windows:
+    uses: bilpay-tech/air/.github/workflows/smoke_test_window_reust_job.yml@fix_window_arg_bug
+    with: 
+      run_on: windows-latest
